@@ -1,0 +1,355 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "iterm",
+        "height": 15,
+        "width": 30,
+        "padding": {
+            "top": 5,
+            "left": 3,
+            "right": 3,
+        },
+        "source": "/Users/aplace/Pictures/Wallpaper/trick_hinana_fes.png",
+        "preserveAspectRatio": true
+    },
+    "display": {
+        "temp": {
+            "unit": "Celsius",
+            "ndigits": 2
+        },
+        "percent": {
+            "type": 3,
+            "color": {
+                "green": "green",
+                "yellow": "yellow",
+                "red": "red"
+            },
+            "ndigits": 2,
+        },
+        "key": {
+            "paddingLeft": 0,
+            "width": 12,
+            "type": "both"
+        },
+        "bar": {
+            "width": 25,
+            "borderLeft": "[",
+            "borderRight": "]",
+            "charElapsed": "🬋",
+            "charTotal": " "
+        },
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "╭────────────────────────────────────────────────────────────────────────────────╮",
+        },
+        {
+            "type": "title",
+            "format": "│    {user-name-colored}{at-symbol-colored}{host-name-colored}",
+            "fqdn": true,
+            "color": {
+                "host": "dim_white",
+                "at": "dim_white",
+                "user": "white",
+            }
+        },
+        {
+            "type": "users",
+            "keyIcon": "│ ",
+            "key": "USER",
+            "keyColor": "white",
+            "format": "{name} {#dim_white}| 󰭖 {days}:{hours}:{minutes}:{seconds}{#reset_white}"
+        },
+        {
+            "type": "datetime",
+            "keyIcon": "│ ",
+            "key": "DTTM",
+            "keyColor": "white",
+            "format": "{#bright_}{year}/{month-pretty}/{day-in-month} {weekday-short} {hour-pretty}:{minute-pretty}:{second-pretty} {#reset_italic_white} ({offset-from-utc} {timezone-name}){#reset_}"
+        },
+        {
+            "type": "weather",
+            "location": "Pohang",
+            "keyIcon": "│ ",
+            "key": "WTTR",
+            "keyColor": "white",
+            "timeout": 1000
+        },
+        {
+            "type": "custom",
+            "format": "{#white}│"
+        },
+        {
+            "type": "battery",
+            "keyIcon": "│ 󰁹",
+            "key": "BATT",
+            "keyColor": "white",
+            "temp": true,
+            "percent": {
+                "green": 70,
+                "yellow": 20,
+                "type": 11
+            },
+            "format": "{capacity-bar} {capacity} {#dim_white}|{#reset_white} 󰔏 {temperature} {#dim_white}|{#reset_white} 󰅐 {time-hours}h {time-minutes}m ({status})"
+        },
+        {
+            "type": "poweradapter",
+            "keyIcon": "│ 󱊥",
+            "key": "PWR ",
+            "keyColor": "white"
+        },
+        {
+            "type": "sound",
+            "key": "SND ",
+            "keyIcon": "│ ",
+            "keyColor": "white",
+            "format": "{volume-percentage-bar} {volume-percentage} {#dim_white}| {name}{#reset_white}",
+            "percent": {
+                "green": 30,
+                "yellow": 70,
+                "type": 11
+            }
+        },
+        {
+            "type": "brightness",
+            "key": "BRT ",
+            "keyIcon": "│ 󰯪",
+            "keyColor": "white",
+            "percent": {
+                "green": 60,
+                "yellow": 80,
+                "type": 11
+            },
+            "format": "{percentage-bar} {percentage} {#dim_white}| {name}{#reset_white}"
+        },
+        {
+            "type": "custom",
+            "format": "{#white}╰────────────────────────────────────────────────────────────────────────────────╯",
+        },
+        {
+            "type": "custom",
+            "format": "{#green}╭─{#inverse_green} NOW PLAYING {#reset_green}──────────────────────────────────────────────────────────────────╮",
+        },
+        {
+            "type": "player",
+            "keyIcon": "│ 󰥠",
+            "key": "PLAY",
+            "keyColor": "green",
+        },
+        {
+            "type": "media",
+            "key": "MUSC",
+            "keyIcon": "│ 󰎇",
+            "keyColor": "green",
+            "format": "{title} - {#italic_white}{?artist}{artist}{#reset_white} ({status})"
+        },
+        {
+            "type": "custom",
+            "format": "{#green}╰────────────────────────────────────────────────────────────────────────────────╯",
+        },
+        {
+            "type": "custom",
+            "format": "{#magenta}╭─{#inverse_magenta} STATUS {#reset_magenta}───────────────────────────────────────────────────────────────────────╮",
+        },
+        {
+            "type": "cpuusage",
+            "key": "CPU ",
+            "keyIcon": "│ 󰓅",
+            "keyColor": "magenta",
+            "percent": {
+                "green": 75,
+                "yellow": 90,
+                "type": 11
+            },
+            "format": "{avg-bar} {avg} {#dim_white}|{#reset_white} 󰄼 {min} 󰄿 {max}"
+        },
+        {
+            "type": "memory",
+            "keyIcon": "│ 󰍛",
+            "key": "MEM ",
+            "keyColor": "magenta",
+            "percent": {
+                "green": 70,
+                "yellow": 90,
+                "type": 11
+            },
+            "format": "{percentage-bar} {percentage} {#dim_white}|{#reset_white} {used} / {total}"
+        },
+        {
+            "type": "gpu",
+            "driverSpecific": true,
+            "temp": true,
+            "keyIcon": "│ 󰾲",
+            "key": "GPU ",
+            "keyColor": "magenta",
+            "format": "{shared-used} / {shared-total} {#dim_white}|{#reset_white} 󰔏 {temperature}"
+        },
+        {
+            "type": "disk",
+            "keyIcon": "│ ",
+            "key": "DSK ",
+            "keyColor": "magenta",
+            "percent": {
+                "green": 75,
+                "yellow": 90,
+                "type": 11
+            },
+            "format": "{size-percentage-bar} {size-percentage} {#dim_white}|{#reset_white} {size-used} / {size-total}"
+        },
+        {
+            "type": "custom",
+            "format": "{#magenta}│"
+        },
+        {
+            "type": "loadavg",
+            "keyIcon": "│ ",
+            "key": "LOAD",
+            "keyColor": "magenta",
+            "format": "{loadavg1} {#dim_white}|{#reset_white} {loadavg2} {#dim_white}|{#reset_white} {loadavg3}"
+        },
+        {
+            "type": "processes",
+            "keyIcon": "│ ",
+            "key": "PROC",
+            "keyColor": "magenta",
+            "format": "{result}"
+        },
+        {
+            "type": "custom",
+            "format": "{#magenta}╰────────────────────────────────────────────────────────────────────────────────╯",
+        },
+        {
+            "type": "custom",
+            "format": "{#cyan}╭─{#inverse_cyan} SYSTEM {#reset_cyan}───────────────────────────────────────────────────────────────────────╮",
+        },
+        {
+            "type": "host",
+            "key": "HOST",
+            "keyIcon": "│ 󰌢",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "kernel",
+            "key": "KERN",
+            "keyIcon": "│ ",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "uptime",
+            "key": "UPTM",
+            "keyIcon": "│ ",
+            "keyColor": "cyan",
+            "format": "{days}:{hours}:{minutes}:{seconds} {#dim_white}| {boot-time}~{#reset_white}"
+        },
+        {
+            "type": "locale",
+            "key": "LOCL",
+            "keyIcon": "│ ",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "custom",
+            "format": "{#cyan}╰────────────────────────────────────────────────────────────────────────────────╯",
+        },  
+        {
+            "type": "custom",
+            "format": "{#blue}╭─{#inverse_blue} SOFTWARE {#reset_blue}─────────────────────────────────────────────────────────────────────╮",
+        },
+        {
+            "type": "packages",
+            "key": "PKGS",
+            "keyIcon": "│ 󰏖",
+            "keyColor": "blue"
+        },
+        {
+            "type": "shell",
+            "key": "SHLL",
+            "keyIcon": "│ ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "TERM",
+            "keyIcon": "│ ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "{#blue}╰────────────────────────────────────────────────────────────────────────────────╯",
+        },
+        /*
+            CONNECTION
+                Net
+                    Wifi
+                    Pub IP
+                    Loc IP
+                    DNS
+                Bluetooth Radio
+                    
+        */
+        {
+            "type": "custom",
+            "format": "{#yellow}╭─{#inverse_yellow} CONNECTION {#reset_yellow}───────────────────────────────────────────────────────────────────╮",
+        },
+        {
+            "type": "netio",
+            "keyIcon": "│ 󰾆",
+            "key": "NET ",
+            "format": "󰄼 {rx-size} 󰄿 {tx-size}"
+        },
+        {
+            "type": "publicip",
+            "key": "PBIP",
+            "keyIcon": "│ 󰩠",
+            "timeout": 1000,
+            "format": "󰩟 {ip} {#dim_white}|  {location}{#reset_white}"
+        },
+        {
+            "type": "localip",
+            "key": "LCIP",
+            "keyIcon": "│ 󰩟",
+            "showIpv6": true,
+            "showMac": true,
+            "showSpeed": true,
+            "showMtu": true,
+            "showLoop": true,
+            "showFlags": true,
+            "showAllIps": true,
+            "format": "󰎭 {ipv4} {#dim_white}|{#reset_white} 󰎳 {ipv6} {#dim_white}|{#reset_white} 󰾰 {mac}"
+        },
+        {
+            "type": "wifi",
+            "keyIcon": "│ ",
+            "key": "WIFI",
+            "format": "󰖩 {ssid} ({band}㎓) {#dim_white}|{#reset_white} 󰄼 {rx-rate} 󰄿 {tx-rate} {#dim_white}|{#reset_white} 󰤉 {signal-quality} {#dim_white}|{#reset_white} {status}"
+        },
+        {
+            "type": "bluetoothradio",
+            "keyIcon": "│ 󰐻",
+            "key": "BTRD"
+        },
+        {
+            "type": "bluetooth",
+            "keyIcon": "│   ",
+            "format": " {name} {#dim_white}|  {address} |  {type}{#reset_white}",
+            "key": "BT"
+        },
+        {
+            "type": "custom",
+            "format": "{#yellow}╰────────────────────────────────────────────────────────────────────────────────╯",
+        },
+        "break",
+        {
+            "type": "colors",
+            "block": {
+                "width": 10,
+                "range": [
+                    0,
+                    15
+                ]
+            }
+        }
+    ]
+}
